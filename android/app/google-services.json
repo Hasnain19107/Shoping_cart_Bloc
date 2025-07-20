@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "838742603274",
+    "project_id": "notesnest-76bfb",
+    "storage_bucket": "notesnest-76bfb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838742603274:android:74a14e39b83e8f9b8451f3",
+        "android_client_info": {
+          "package_name": "com.example.notes_nest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPd5nVqTPp8b3IdQ8ovd7h62UuOxdQwHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838742603274:android:1fe1f7b57a9319d48451f3",
+        "android_client_info": {
+          "package_name": "com.example.product_cart_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPd5nVqTPp8b3IdQ8ovd7h62UuOxdQwHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

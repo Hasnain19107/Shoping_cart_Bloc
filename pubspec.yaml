@@ -1,0 +1,54 @@
+name: product_cart_app
+description: A Flutter app with Clean Architecture, product listing, cart, and Firebase auth
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management
+  flutter_bloc: 
+  equatable: 
+  
+  # HTTP requests
+  http: 
+  
+  # Firebase
+  firebase_core: 
+  firebase_auth: 
+  
+  # UI & Responsive
+  cached_network_image: 
+  flutter_screenutil: 
+  
+  # Local Storage
+  shared_preferences: ^2.5.3 
+  
+  # JSON & Functional Programming
+  json_annotation: 
+  dartz: 
+  
+  # Dependency Injection
+  get_it: 
+  injectable: 
+  cloud_firestore: ^5.6.11
+  go_router: ^16.0.0
+  connectivity_plus: ^6.1.4
+  flutter_staggered_grid_view: ^0.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 
+  build_runner: 
+  json_serializable: 
+  injectable_generator: 
+
+flutter:
+  uses-material-design: true
+ 
+    
