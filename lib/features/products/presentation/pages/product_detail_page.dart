@@ -23,12 +23,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.share),
-            onPressed: () => _showShareMessage(context),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -76,7 +70,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
       ),
       bottomNavigationBar: ProductActionButtons(
         isInStock: widget.product.stock > 0,
-        onAddToWishlist: () => _showWishlistMessage(context),
         onAddToCart: () => _addToCart(context),
       ),
     );
@@ -90,7 +83,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('$quantity x ${widget.product.title} added to cart'),
-        backgroundColor: const Color(0xFF4CAF50),
+        backgroundColor:
+            Theme.of(context).colorScheme.primary, // Use theme color
         behavior: SnackBarBehavior.floating,
         margin: const EdgeInsets.all(16),
         shape: RoundedRectangleBorder(
@@ -102,7 +96,11 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
 
   void _showWishlistMessage(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Wishlist feature coming soon!')),
+      SnackBar(
+        content: const Text('Wishlist feature coming soon!'),
+        backgroundColor:
+            Theme.of(context).colorScheme.secondary, // Use theme color
+      ),
     );
   }
 

@@ -51,21 +51,3 @@ class LoadProductDetailEvent extends ProductEvent {
   @override
   List<Object> get props => [productId];
 }
-
-class ShareProductEvent extends ProductEvent {
-  final Product product;
-
-  const ShareProductEvent(this.product);
-
-  @override
-  List<Object> get props => [product];
-}
-
-class AddToWishlistEvent extends ProductEvent {
-  final Product product;
-
-  const AddToWishlistEvent(this.product);
-
-  @override
-  List<Object> get props => [product];
-}

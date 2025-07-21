@@ -8,7 +8,7 @@ export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:equatable/equatable.dart';
 
 // Network & Data
-export 'package:dartz/dartz.dart';
+
 export 'package:http/http.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 
@@ -75,9 +75,7 @@ export 'package:product_cart_app/features/auth/presentation/widgets/guest_button
 
 // Products Domain
 export 'package:product_cart_app/features/products/domain/entities/product.dart';
-export 'package:product_cart_app/features/products/domain/entities/dimensions.dart';
-export 'package:product_cart_app/features/products/domain/entities/review.dart';
-export 'package:product_cart_app/features/products/domain/entities/meta.dart';
+
 export 'package:product_cart_app/features/products/domain/repositories/product_repository.dart';
 export 'package:product_cart_app/features/products/domain/usecases/get_products.dart';
 
@@ -121,13 +119,9 @@ export 'package:product_cart_app/features/cart/presentation/bloc/cart_bloc.dart'
 export 'package:product_cart_app/features/cart/presentation/bloc/cart_event.dart';
 export 'package:product_cart_app/features/cart/presentation/bloc/cart_state.dart';
 export 'package:product_cart_app/features/cart/presentation/pages/cart_page.dart';
-export 'package:product_cart_app/features/cart/presentation/widgets/cart_app_bar.dart';
-export 'package:product_cart_app/features/cart/presentation/widgets/cart_body_widget.dart';
+
 export 'package:product_cart_app/features/cart/presentation/widgets/cart_state_listener.dart';
-export 'package:product_cart_app/features/cart/presentation/widgets/cart_actions_widget.dart';
-export 'package:product_cart_app/features/cart/presentation/widgets/cart_content_widget.dart';
-export 'package:product_cart_app/features/cart/presentation/widgets/cart_error_widget.dart';
-export 'package:product_cart_app/features/cart/presentation/widgets/cart_loading_widget.dart';
+
 export 'package:product_cart_app/features/cart/presentation/widgets/cart_timeout_widget.dart';
 export 'package:product_cart_app/features/cart/presentation/widgets/empty_cart_widget.dart';
 export 'package:product_cart_app/features/cart/presentation/widgets/guest_notification_banner.dart';
@@ -138,4 +132,6 @@ export 'package:product_cart_app/features/cart/presentation/widgets/cart_item_wi
 export 'package:product_cart_app/features/cart/presentation/widgets/guest_checkout_dialog.dart';
 
 // Splash Presentation
+
+export 'package:product_cart_app/features/splash/presentation/pages/splash_page.dart';
 export 'package:product_cart_app/features/splash/presentation/pages/splash_page.dart';

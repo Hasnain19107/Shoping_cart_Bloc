@@ -14,59 +14,74 @@ class CartSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Container(
-      padding: const EdgeInsets.all(AppConstants.defaultPadding),
-      decoration: const BoxDecoration(
-        color: AppTheme.backgroundColor,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color:
+            colorScheme.surface, // Use theme surface color instead of hardcoded
+        border: Border(
+          top: BorderSide(
+            color:
+                colorScheme.outline.withOpacity(0.2), // Use theme outline color
+            width: 1,
+          ),
+        ),
         boxShadow: [
           BoxShadow(
-            color: Color.fromRGBO(0, 0, 0, 0.1),
-            blurRadius: 4,
+            color:
+                colorScheme.shadow.withOpacity(0.1), // Use theme shadow color
+            blurRadius: 8,
           ),
         ],
       ),
       child: SafeArea(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Total ($totalItems items):',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                  'Total Items: $totalItems',
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: colorScheme.onSurface, // Use theme text color
+                  ),
                 ),
                 Text(
                   '\$${totalAmount.toStringAsFixed(2)}',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: AppTheme.primaryColor,
-                      ),
+                  style: theme.textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: colorScheme.onSurface, // Use theme text color
+                  ),
                 ),
               ],
             ),
             const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
-              child: BlocBuilder<AuthBloc, AuthState>(
-                builder: (context, authState) {
-                  return ElevatedButton(
-                    onPressed: onCheckout,
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      backgroundColor: authState is AuthGuest
-                          ? const Color(0xFFFF9800)
-                          : AppTheme.primaryColor,
-                      foregroundColor: Colors.white,
-                    ),
-                    child: Text(
-                      authState is AuthGuest
-                          ? 'Login to Checkout'
-                          : 'Proceed to Checkout',
-                    ),
-                  );
-                },
+              child: ElevatedButton(
+                onPressed: onCheckout,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      colorScheme.primary, // Use theme primary color
+                  foregroundColor:
+                      colorScheme.onPrimary, // Use theme on-primary color
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: Text(
+                  'Proceed to Checkout',
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color:
+                        colorScheme.onPrimary, // Ensure button text is visible
+                  ),
+                ),
               ),
             ),
           ],

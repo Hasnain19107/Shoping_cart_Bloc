@@ -39,10 +39,8 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Register'),
-        backgroundColor: AppTheme.backgroundColor,
-        foregroundColor: AppTheme.textPrimaryColor,
+        automaticallyImplyLeading: false, // This removes the back button
       ),
-      backgroundColor: AppTheme.backgroundColor,
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is AuthAuthenticated) {
@@ -51,7 +49,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(state.message),
-                backgroundColor: AppTheme.errorColor,
+                backgroundColor: Theme.of(context).colorScheme.error,
                 behavior: SnackBarBehavior.floating,
                 margin: const EdgeInsets.all(16),
                 shape: RoundedRectangleBorder(

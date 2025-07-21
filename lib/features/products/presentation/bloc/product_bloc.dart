@@ -1,4 +1,5 @@
 import 'package:product_cart_app/core/imports/app_imports.dart'; // Add this import
+import 'package:product_cart_app/features/products/presentation/bloc/product_state.dart'; // Ensure this import exists
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
   final GetProducts getProducts;
@@ -10,8 +11,6 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
     on<SortProductsEvent>(_onSortProducts);
     on<SearchProductsEvent>(_onSearchProducts);
     on<LoadProductDetailEvent>(_onLoadProductDetail);
-    on<ShareProductEvent>(_onShareProduct);
-    on<AddToWishlistEvent>(_onAddToWishlist);
   }
 
   Future<void> _onLoadProducts(
@@ -144,21 +143,5 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
     } else {
       emit(const ProductError('Product not found'));
     }
-  }
-
-  Future<void> _onShareProduct(
-    ShareProductEvent event,
-    Emitter<ProductState> emit,
-  ) async {
-    // Implement share logic here
-    emit(const ProductActionSuccess('Share functionality coming soon!'));
-  }
-
-  Future<void> _onAddToWishlist(
-    AddToWishlistEvent event,
-    Emitter<ProductState> emit,
-  ) async {
-    // Implement wishlist logic here
-    emit(const ProductActionSuccess('Wishlist feature coming soon!'));
   }
 }

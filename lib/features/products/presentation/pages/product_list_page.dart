@@ -95,16 +95,22 @@ class ProductListPage extends StatelessWidget {
                       ),
                       IconButton(
                         icon: const Icon(Icons.login),
-                        onPressed: () =>
-                            Navigator.pushNamed(context, AppRoutes.login),
+                        onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          AppRoutes.login,
+                          (route) => false, // This removes all previous routes
+                        ),
                       ),
                     ],
                   );
                 } else {
                   return IconButton(
                     icon: const Icon(Icons.login),
-                    onPressed: () =>
-                        Navigator.pushNamed(context, AppRoutes.login),
+                    onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      AppRoutes.login,
+                      (route) => false, // This removes all previous routes
+                    ),
                   );
                 }
               },

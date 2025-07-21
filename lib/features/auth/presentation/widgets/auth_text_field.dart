@@ -25,39 +25,56 @@ class AuthTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return TextFormField(
       controller: controller,
       obscureText: obscureText,
       keyboardType: keyboardType,
+      validator: validator,
       decoration: InputDecoration(
         labelText: labelText,
         hintText: hintText,
+        labelStyle: TextStyle(color: theme.hintColor),
+        hintStyle: TextStyle(color: theme.hintColor),
         prefixIcon: Icon(
           prefixIcon,
-          color: AppTheme.primaryColor,
+          color: Colors.blue,
         ),
         suffixIcon: suffixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppTheme.borderColor),
+          borderSide: const BorderSide(color: Colors.blue),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: Colors.blue),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(
-            color: AppTheme.focusedBorderColor,
+            color: Colors.blue,
             width: 2,
           ),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(
-            color: AppTheme.errorBorderColor,
+          borderSide: const BorderSide(color: Colors.blue),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: colorScheme.error,
+            width: 2,
           ),
         ),
         filled: true,
-        fillColor: AppTheme.surfaceColor,
+        fillColor: colorScheme.surface,
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       ),
-      validator: validator,
+      style: TextStyle(color: colorScheme.onSurface),
     );
   }
 }
